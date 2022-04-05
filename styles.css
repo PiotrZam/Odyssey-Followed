@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Oswald:wght@200&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1F1F1F;
+}
+
+.static {
+  height: 100%;
+  overflow: hidden;
+}
+
+.invisible {
+  opacity: 0%;
+  visibility: hidden;
+  transition: opacity 0.7s ease-in-out,
+             visibility 0.7s;
+}
+
+.followedWrapper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.articleRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.followed {
+    width: 15vh;
+    min-width: 150px;
+    max-height: 500px;
+    height: 170px;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    margin-bottom: 3vh;
+    /* background-color: #141313; */
+    overflow: hidden;
+    align-items: center;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+.followedAvatar {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 150px;
+    max-height: 200px;
+    justify-content: center;
+}
+
+.followedName {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  color: azure;
+  margin-top: 5px;
+  cursor: default;
+}
+
+.followedAvatar img {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.followedControls {
+  color: azure;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  font-size: 3vh;
+  justify-content: space-evenly;
+  position: absolute;
+  left: 250px;
+}
+
+.followedControls i {
+  cursor: pointer;
+}
+
+.followedControls i:hover, .followedControls i:active {
+  color: darkgreen;
+}
+
+.openedDashboard {
+  background-color: rgb(53, 46, 46);
+  padding: 5px;
+  height: 67vh;
+  overflow: auto;
+}
+
+.active{
+  /* position: fixed;
+  top: 30px;
+  left: 45%;
+  width: 30vw; */
+  position: relative;
+  /* transition: all 1s linear; */
+  
+}
+.profileActions {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color: azure;
+    width: 260px;
+    margin: 2vh;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileActions div {
+    height: 65px;
+}
+
+.iconsContainer {
+    display: flex;
+    flex-direction: row;
+    font-size: 3vh;
+    justify-content: space-evenly;
+}
+
+.iconsContainer i {
+    cursor: pointer;
+}
+
+.iconsContainer i:hover, .iconsContainer i:active {
+    color: darkgreen;
+}
+
+.dashboardImg {
+    flex-shrink: 0;
+    background-color: gray;
+    width: 120px;
+    height: 120px;
+    border-radius: 5%;
+    border: solid 4px gray;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+    float: left;
+    cursor: pointer;
+}
+
+.dashboardImg img {
+    width: 120px;
+    height: 120px;
+}
+
+.dashboardImgWrapper {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y:hidden;
+    align-items: flex-start;
+}
+
+
+.dashboardImgSection {
+    width: 50%;
+    height: 100%;
+    margin: 10px;
+    display: grid;
+  }
+/* 
+main > *:not(.dashboardImg) {
+    filter: blur(3px);
+  } */
+
+.blurred {
+    filter: blur(3px);
+  }
+
+  .expandedImgContainer {
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    max-width: 60vw;
+    max-height: 70vh;
+  }
+
+  .expandedImgContainer img {
+    max-width: 60vw;
+    max-height: 70vh;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  .closeButton:active, .closeButton:hover {
+    color: darkred;
+  }
+
+
+
+  /* Tiberiu:  -----------------------------------------------------------------------------------*/
+  #artworkName, #artist {
+    display: block;
+    overflow: hidden;
+    line-height: 2.8vh;
+    bottom: 6vh;
+    opacity: 0.9;
+  }
+  
+  #artworkName span, #artist span {
+    position: relative;
+    top: 8vh;
+    opacity: 0;
+  }
+  
+  #artworkName {
+    left: 30vw;
+  }
+  
+  #artist {
+    right: 30vw;
+  }
+
+  .layoutSettings {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    gap: 1vh;
+    margin: 1vh 3vw 0 3vw;
+    border: none;
+  }
+  
+  .patternI {
+    grid-template-areas: 'A1 A1 A2 A2 A4 A6'
+                         'A1 A1 A3 A3 A5 A6';
+  } 
+
+    /* .patternI {
+    grid-template-areas: 'A1 A2 A3 A5 A8 A9'
+                         'A1 A4 A4 A5 A6 A7';
+  }  */
+  
+  .patternII {
+    grid-template-areas: 'B1 B2 B4 B4 B6 B6'
+                         'B1 B3 B3 B5 B6 B6';
+  }
+  
+  .patternIII {
+    grid-template-areas: 'C1 C3 C4 C4 C5 C6'
+                         'C2 C3 C4 C4 C5 C7';
+  }
+  
+  .container {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 30vh;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background-color: #1F1F1F;
+      z-index: 1;
+  }
+  
+  .artwork {
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    z-index: -100;
+    overflow: hidden;
+  }
+  
+  .poemLines {
+    width: 60%;
+    margin: auto;
+  }
+  
+  .artwork p {
+    color: rgb(202, 202, 202);
+    text-align: left;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 1.5vh;
+    margin: 1vh 0;
+  }
+  
+  .artwork h1 {
+    color: rgb(202, 202, 202);
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5vh;
+    margin: 1vh 4vh;
+  }
+  
+  .extension {
+    background-color: #1f1f1f;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+  }
+  
+  .artText {
+    position: relative;
+    height: 100%;
+    width: auto;
+    overflow: auto;
+  }
+  
+  /* Scroll bar settings */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(202, 202, 202);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(180, 180, 180);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1F1F1F;
+  }
+  
+  .titleArt {
+    color: rgb(202, 202, 202);
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4vh;
+    font-weight: 400;
+    opacity: 0;
+    display: none;
+    margin: 2vh 2vh;
+  }
+  
+  .descriptionArt {
+    color: rgb(202, 202, 202);
+    text-align: left;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5vh;
+    opacity: 0;
+    display: none;
+    margin: 2vh 4vh;
+    overflow: auto;
+  }
+  
+  .containerHover { 
+      position: relative;
+      height: 100%;
+      width: 100%;
+  }
+  
+  .topBorder, .rightBorder, .bottomBorder, .leftBorder {
+    position: absolute;
+    border: .5px solid rgba(202, 202, 202, 0.5);  /* .5px */
+    z-index: 100;
+  }
+  
+  .bottomBorder {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .rightBorder {
+    right: 0;
+    top: 0;
+  }
+  
+  .leftBorder {
+    left: 0;
+    bottom: 0;
+  }
+  
+  .topBorder {
+    top: 0;
+  }
+  
+  .A1 {
+    grid-area: A1;
+    min-height: 61vh;
+  }
+  
+  .A2 {
+    grid-area: A2;
+  }
+  
+  .A3{
+    grid-area: A3;
+  }
+  
+  .A4 {
+    grid-area: A4;
+  }
+  
+  .A5{
+    grid-area: A5;
+  }
+  
+  .A6 {
+    grid-area: A6;
+    min-height: 61vh;
+  }
+  
+  .B1 {  
+    min-height: 61vh;
+    grid-area: B1;
+  }
+  
+  .B2 {  
+    grid-area: B2;
+  }
+  
+  .B3 {  
+    grid-area: B3;
+  }
+  
+  .B4 {  
+    grid-area: B4;
+  }
+  
+  .B5 {  
+    grid-area: B5;
+  }
+  
+  .B6 { 
+    min-height: 61vh;
+    grid-area: B6;
+  }
+  
+  .C1 { 
+    grid-area: C1;
+  }
+  
+  .C2 { 
+    grid-area: C2;
+  }
+  
+  .C3 { 
+    min-height: 61vh;
+    grid-area: C3;
+  }
+  
+  .C4 { 
+    min-height: 61vh;
+    grid-area: C4;
+  }
+  
+  .C5 { 
+    min-height: 61vh;
+    grid-area: C5;
+  }
+  
+  .C6 { 
+    grid-area: C6;
+  }
+  
+  .C7 { 
+    grid-area: C7;
+  }
+  
